@@ -3,6 +3,10 @@ import { useState } from 'react';
 export default function App() {
   const [languagesList, setLanguagesList] = useState(['HTML', 'CSS', 'JavaScript']);
 
+  const addTypeScriptToTheLanguagesList = () => {
+    setLanguagesList((state) => [...state, 'TypeScript']);
+  };
+
   return (
     <div>
       <h1>Hello world!</h1>
@@ -12,6 +16,7 @@ export default function App() {
           <li key={lang}>{lang}</li>
         ))}
       </ul>
+      <button onClick={addTypeScriptToTheLanguagesList}>Add language</button>
     </div>
   );
 }
